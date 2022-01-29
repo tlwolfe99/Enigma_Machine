@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+codex {font-size: 1.2em; }
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Simulation - Debug</center>
+</header>
+<div class="indent12">
+
+<p>
+For debugging or just to see what is going on internally, enter this on the command line 
+<pre><codex>./test_EnigmaMachine.py  enigma_config_6.csv | tee log.txt
+</codex></pre>
+The user sees the normal standard out but it is also captured to a log file.
+</p>
+<p>
+The Linux script command allows the user to capture terminal sessions.
+<pre><codex>script log.txt
+....
+....
+....
+^d
+</codex></pre>
+ctl-d will exit the script command. It closes the terminal window or ends
+terminal line input.
+</p>
+</div>
+<footer>
+<modate>Last Modified: November 2021</modate>
+</footer>
+</body>
+</html>

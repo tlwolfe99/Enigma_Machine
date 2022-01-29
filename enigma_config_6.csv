@@ -1,0 +1,77 @@
+# Enigma Machine Simulation Configuration
+date,2021-12-18
+unk,F
+len,6
+# alphabet,list-idx,char
+abc,0,A
+abc,1,B
+abc,2,C
+abc,3,D
+abc,4,E
+abc,5,F
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+I,0,3,A,D
+I,1,0,B,A
+I,2,5,C,F
+I,3,2,D,C
+I,4,1,E,B
+I,5,4,F,E
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+II,0,4,A,E
+II,1,5,B,F
+II,2,0,C,A
+II,3,2,D,C
+II,4,1,E,B
+II,5,3,F,D
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+III,0,3,A,D
+III,1,0,B,A
+III,2,5,C,F
+III,3,4,D,E
+III,4,2,E,C
+III,5,1,F,B
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+IV,0,5,A,F
+IV,1,4,B,E
+IV,2,1,C,B
+IV,3,2,D,C
+IV,4,0,E,A
+IV,5,3,F,D
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+V,0,2,A,C
+V,1,5,B,F
+V,2,1,C,B
+V,3,4,D,E
+V,4,0,E,A
+V,5,3,F,D
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+VI,0,3,A,D
+VI,1,2,B,C
+VI,2,0,C,A
+VI,3,5,D,F
+VI,4,1,E,B
+VI,5,4,F,E
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+VII,0,5,A,F
+VII,1,4,B,E
+VII,2,1,C,B
+VII,3,2,D,C
+VII,4,0,E,A
+VII,5,3,F,D
+# rotor-name,in-list-idx,out-list-idx,in-char,out-char
+VIII,0,4,A,E
+VIII,1,2,B,C
+VIII,2,3,C,D
+VIII,3,5,D,F
+VIII,4,1,E,B
+VIII,5,0,F,A
+# reflector,in-list-idx,out-list-idx,in-char,out-char
+ref,0,5,A,F
+ref,1,2,B,C
+ref,2,1,C,B
+ref,3,4,D,E
+ref,4,3,E,D
+ref,5,0,F,A
+# plugboard,char-pair
+plug,AC
+plug,BD

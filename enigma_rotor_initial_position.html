@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Lollipop</title><style>
+img.xx
+{
+  height: 600px;
+}
+img
+{
+  border: 2px solid #000000;
+}
+pre.xxx
+{
+  font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Simulation - Rotor Initial Position</center>
+</header>
+<div class="indent12">
+
+<h2>Introduction</h2>
+<p>
+Before encrypting/decryption, an enigma machine operator must
+set the rotors to an initial starting position.
+(See the operation notes.)
+</p>
+<p>
+The simulation has an interesting problem. The code must simulate how mechanical rotors and
+electric circuit works.
+</p>
+
+<h2>Traverse The Rotors and Reflector</h2>
+<p>
+Note that the IN pins are not the OUT pins for rotors and reflector.
+Also note if you switch input and output, an encrypt character
+can be decrypted.
+<p>
+<img src="enigma_rotor_initial_position_3.png" alt="image missing" />
+</p>
+
+<h2>Keys, Lamps, Pins, Characters, Python Lists</h2>
+<p>
+"In the code" keys/lamps/characters are hard coded ...
+<ul>
+<li>A is pin 0 (list-index 0)</li>
+<li>B is pin 1 (list-index 1)</li>
+<li>C is pin 2 (list-index 2)</li>
+<li> ...</li>
+<li>Y is pin 24 (list-index 24)</li>
+<li>Z is pin 25 (list-index 25)</li>
+</ul>
+<i>Pins connect characters to rotor pins. And rotor pins eventually connect to lamps.
+Between the keys and lamps, pins connect to other pins, the other pins connect to yet other pins, ...</i>
+</p>
+<p>
+A python list is used to represent a round rotor. When
+processing reaches the end of the list it start back at
+the beginning. Thus the list effectively becomes round.
+</p>
+<p>
+Python lists have an integer index to access elements (values) in the list.
+The first element's index is zero (0).
+</p>
+
+<h2>Set a Rotor's Starting (Initial) Position</h2>
+<p>
+Each rotor's starting position must be set before encryption/decryption.
+(The default "in the code" is A.)
+</p>
+<p>
+The diagram shows how the code simulates the rotor being rotated so F is in the starting position.
+The list order is maintained.
+</p>
+<p>
+<img src="enigma_rotor_initial_position_1.png" alt="image missing" />
+</p>
+<p>
+<i>The diagram show characters in a rotor list. In fact, "in the code" it contains list-indexes.
+The characters are in the diagram to help visualize what is happening.
+The list is a randomized set of list-indexes (characters).</i>
+</p>
+<p>
+For example if when a key is pressed, the Key's (character's) list-index (0-25) is used to
+access the first rotor's list-index (0-25). The list's value at that index
+is used to access the next rotor,
+and so on until, at the end, a lamp is lit indicating the encrypted/decrypted
+character. At each step a new character (list-index) is substituted for the current
+character (list-index).
+</p>
+
+<h2>Rotate a Rotor</h2>
+<p>
+This diagram shows how the code simulates a rotor rotating to the next position to wait for the 
+next key to be pressed. (After each move to the next position the character pins
+are connected to different set of rotor pins.)
+</p>
+<p>
+<img src="enigma_rotor_initial_position_2.png" alt="image missing" />
+</p>
+<p>
+Enigma machine rotors are hard-wired substitution ciphers.
+Each rotor's IN  pin is connected to a different OUT pin. There
+is a unique IN/OUT pair of pins for each letter of the alphabet.
+Each letter of the alphabet is associated with a list-index
+and pin number. For example, the letter A may be pin 0 and list
+index 0. (See the abc dictionary in the code.)
+</p>
+<p>
+With a rotor/list, you can think of the list-index as an IN
+pin/list-index/character. The list's value at the index is an
+OUT pin/list-index/character. OUT is also the IN pin/list-index/character of the next rotor.
+</p>
+<p>
+At the start of encryption/decryption, a character is converted to a pin/index.
+list-indexes are used to traverse the rotors and the reflector and back.
+At the end, the resulting list-index is converted back to a character
+and a lamp is lit.
+</p>
+
+<h2>Rotor Loop Code Example</h2>
+<p>
+<pre><codex>#!/usr/bin/python3
+
+lst    = [ 'a','b','c','d' ]   # list
+lstlen = len(lst)              # list length
+max    = 2                     # max number of time thru the loop
+i      = 0                     # list (rotor) element index
+
+while True:
+
+    # ---- display loop information
+
+    print(f'({max}) [{i}] {lst[i]}')
+
+    # --- loop around the list (rotor)
+
+    i += 1
+    if not i < lstlen:
+        i = 0
+        max -= 1
+
+    # ---- make sure the test/demo loop ends
+
+    if max < 0:   
+        break               
+</codex></pre>
+</p>
+
+</div>
+<footer>
+<modate>Last Modified: October 2021</modate>
+</footer>
+</body>
+</html>

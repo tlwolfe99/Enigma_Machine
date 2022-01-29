@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Lollipop</title>
+<style>
+img
+{
+  border: 2px solid #000000;
+}
+img.w400
+{
+   width: 800px;
+}
+</style>
+</head>
+<body>
+<header>
+
+<center>Enigma Simulation - End to End</center>
+</header>
+<div class="indent12">
+
+<h2>Introduction</h2>
+<p>
+This diagram shows of an enigma machine electrical circuit.  
+</p>
+<p>
+<img src="enigma_end_to_end_1.png" alt="image missing" />
+</p>
+<p>
+It shows several things the simulation needs to be careful with
+<ul>
+<li>each character to be encrypted/decrypted has a unique, fixed key.
+key A can not be key B the next time.</li>
+<li>the character input and output to the rotors, and reflector
+can not be the same. A (character) can never encrypt/decrypt to itself.</li>
+<li>each key (character) must have a unique and fixed connection to the plugboard.</li>
+<li>any key can light any lamp depending on the encryption/decryption path.</li>
+<li>it may not be obvious, but by reversing the input and output an encrypted character
+can be decrypted.</li> 
+</ul>
+</p>
+
+<h2>Plugboard</h2>
+<p>
+The question is "where in the circuit to place the plugboard"?
+</p>
+<p>
+I found the explanation in Wikipedia
+<blockquote><i>
+A cable placed onto the plugboard connected letters in pairs; for example,
+E and Q might be a steckered (plug) pair. The effect was to swap those letters
+before and after the main rotor scrambling unit. For example, when an
+operator pressed E, the signal was diverted to Q before entering the rotors. 
+</i></blockquote>
+</p>
+<p>
+It seems to indicate that the plugboard was used before and after the rotor scrambling.
+That is, twice in a circuit. After the pressed key and after the scrambling.
+This is how I implemented it in my code. It seems to work.
+</p>
+
+<h2>One Possible Enigma GUI</h2>
+<p>
+<img class="w400" src="enigma_gui_01.png" alt="image missing" />
+</p>
+
+<h2>Internally</h2>
+<p>
+list indexes are used by the simulation. Alphabetic characters are only used when
+getting data from or displaying information to the user. For example:
+<ol>
+<li>When the user presses / clicks on / selects an alphabetic character, the character
+is used to lookup the list-index of that character.</li>
+<li>The character's list-index is used internally by the enigma machine simulation.
+A list-index points to another list-index, that points to another list-index, ...</li>
+<li>At the end, the final list-index is converted back to an alphabetic character
+and displayed to the user.</li>
+</ol>
+</p>
+<p>
+<img src="enigma_end_to_end_2.png" alt="image missing" />
+</p>
+<p>
+<i>Note: lists and list-indexes are faster and simpler to use in the simulation.</i>
+</p>
+<p>
+Each rotor, reflector, plugboard can be modeled with a Python list.
+Each rotor, reflector, plugboard is part of an electric circuit.
+Each has a "in" pins and an "out" pins which, when connected together with their pins touching
+form an electric circuit. The list's indexes (0-N) are the "in" pins and the list values (0-N)
+are the "out" pin. The reflector and plugboard are fixed, but the rotors rotate
+changing the circuit's path.
+</p>
+<p>
+Each rotor, reflector, plugboard can also be considered a substitution cipher.
+The list indexes are the "input" characters and the list's values are the
+"output" characters.
+</p>
+
+<h2>Python Coding</h2>
+<p>
+Python lists and dictionaries can be used to simulate the plugboard, rotors, reflector, and keys.
+</p>
+<p>
+The GUI was created using the Python PySimpleGUI module.
+</p>
+
+</div>
+<footer>
+<modate>Last modified: November 2021</modate>
+</footer>
+</body>
+</html>

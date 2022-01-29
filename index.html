@@ -1,0 +1,253 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Enigma Machine Simulation">
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Lollipop</title>
+<style>
+.invisible
+{
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  height: 40px;
+  width: 80px;
+  left: 20px;
+  top: 15px;
+}
+.invisible2
+{
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  height: 40px;
+  width: 80px;
+  left: 100px;
+  top: 15px;
+}
+img { border: 2px solid #000000; }
+.s8 { font-size: 0.8em; }
+</style>
+</head>
+<body>
+<header>
+<input class="invisible" type="button"
+ onclick="location.href='gui2.html';" />
+<center>Enigma Machine Simulation</center>
+<input class="invisible2" type="button"
+ onclick="location.href='48_char.html';" />
+</header>
+<div class="indent12">
+<center>
+<i>I put this material together for the fun of it.
+Anyone is free to use it in any manner they wish.
+<br>No guarantees are made.</i>
+<p>
+Expertise comes with study and practice, practice, practice, ...
+</p>
+</center>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Enigma_machine">Enigma machine</a> (Wikipedia)
+<br><i>The Enigma machine is a cipher device developed and used in the
+early- to mid-20th century to protect commercial, diplomatic, and military
+communication. It was employed extensively by Nazi Germany during World War
+II, in all branches of the German military.</i>
+</p>
+<p>
+<div>
+The Real Thing<br>
+<img src="enigma_02.png" alt="image missing" />
+<br>
+<i class="s8">commons.wikimedia.org/wiki/File:Enigma.jpg</i>
+</div>
+</p>
+<p>
+<div>Possible Simulation GUI Interface<br>
+<img style="width: 600px;" src="enigma_gui_03.png" alt="image missing" />
+</div>
+</p>
+<p>
+<div>Another Possible Simulation GUI Interface<br>
+<img style="height: 250px;" src="enigma_gui_04.png" alt="image missing" />
+</div>
+</p>
+
+<h2>Python3 Files</h2>
+<p>
+The enigma machine simulation works, but I am sure there
+are still bugs in the code. I apologize in advance.
+</p>
+<div class="bigf">
+<p>
+<a href="./list_text.php?file=enigma_gui.py">enigma_gui.py</a>
+<br><a href="./list_text.php?file=EnigmaConfig.py">EnigmaConfig.py</a>
+<br><a href="./list_text.php?file=EnigmaMachine.py">EnigmaMachine.py</a>
+<br><a href="./list_text.php?file=EnigmaRotor.py">EnigmaRotor.py</a>
+<br><a href="./list_text.php?file=EnigmaUtils.py">EnigmaUtils.py</a>
+<br><a href="./list_text.php?file=user_interface.py">user_interface.py</a>
+</p>
+<p>
+<a href="./list_text.php?file=create_enigma_config_file.py">create_enigma_config_file.py</a>
+<br><a href="./list_text.php?file=read_enigma_config_file.py">read_enigma_config_file.py</a>
+</p>
+<p>
+<a href="./list_text.php?file=test_enigma_gui.py">test_enigma_gui.py</a>
+<br><a href="./list_text.php?file=test_EnigmaConfig.py">test_EnigmaConfig.py</a>
+<br><a href="./list_text.php?file=test_EnigmaMachine.py">test_EnigmaMachine.py</a>
+(command line interface)
+<br><a href="./list_text.php?file=test_EnigmaRotor.py">test_EnigmaRotor.py</a>
+</p>
+<p>
+<a href="./list_text.php?file=enigma_machine_w_gui.py">enigma_machine_w_gui.py</a>
+(GUI interface)
+</p>
+<p>
+<a href="./list_text.php?file=enigma_encrypt_decrypt_a_file.py">
+enigma_encrypt_decrypt_a_file.py</a>
+</p>
+<p>
+<a href="./list_text.php?file=enigma_config_6.csv">enigma_config_6.csv</a>
+(6  character test alphabet)
+<br><a href="./list_text.php?file=enigma_config_26.csv">enigma_config_26.csv</a>
+(26 character enigma machine alphabet)
+<br><a href="./list_text.php?file=enigma_config_44.csv">enigma_config_44.csv</a>
+(44 character expanded alphabet)
+</p>
+<p>
+<a href="./list_text.php?file=demo_list_copy_1.py">demo_list_copy_1.py</a> (a=b)
+<br><a href="./list_text.php?file=demo_list_copy_2.py">demo_list_copy_2.py</a> (copy)
+<br><a href="./list_text.php?file=demo_list_copy_3.py">demo_list_copy_3.py</a> (deepcopy)
+<br><a href="./list_text.php?file=demo_pysimplegui_combo.py">demo_pysimplegui_combo.py</a>
+<br><a href="./list_text.php?file=demo_rotate_list_01.py">demo_rotate_list_01.py</a>
+(good but insufficient for enigma rotor)
+<br><a href="./list_text.php?file=demo_rotate_list_02.py">demo_rotate_list_02.py</a>
+(good but insufficient for enigma rotor)
+<br><a href="./list_text.php?file=demo_rotate_enigma_rotor_list.py">
+demo_rotate_enigma_rotor_list.py</a>
+<br><a href="./list_text.php?file=demo_substitute_char.py">demo_substitute_char.py</a>
+<br><a href="./list_text.php?file=demo_sys_argv.py">demo_sys_argv.py</a>
+</p>
+</div>
+
+<h2>Documents</h2>
+<p>
+<a href="enigma_simulation_design.html">Enigma machine simulation project design</a>
+</p>
+<p>
+<a href="enigma_design_notes.html">Enigma machine, design notes</a>
+<br>
+<a href="enigma_interesting_facts.html">Enigma machine, interesting facts</a>
+<br>
+<a href="enigma_end_to_end.html">Enigma simulation, end to end</a>
+<br>
+<a href="enigma_randomize_rotor.html">Enigma simulation, randomize rotor</a>
+<br>
+<a href="enigma_simulation_internals.html">Enigma simulation, internals</a>
+<br>
+<a href="enigma_rotor_initial_position.html">Enigma simulation, rotor initial position</a>
+<br>
+<a href="enigma_rotor_list_index_advance.html">Enigma simulation,  rotor list index advance algorithm</a>
+<br>
+<a href="enigma_debug.html">Enigma simulation, capture/view internal operations</a>
+(for debugging, etc)
+<br>
+<a href="enigma_operation_notes.html">Enigma simulation, operation notes</a>
+<br>
+<a href="enigma_gui_notes.html">Enigma simulation, GUI notes</a>
+<br>
+<a href="config_doc.html">Enigma simulation, EnigmaConfig documentation</a>
+<br>
+<a href="enigma_doc.html">Enigma simulation, EnigmaMachine documentation</a>
+<br>
+<a href="rotor_doc.html">Enigma simulation, EnigmaRotor documentation</a>
+<br>
+<a href="util_doc.html">Enigma simulation, EnigmaUtil documentation</a>
+<br>
+<a href="enigma_gui_doc.html">Enigma simulation, GUI documentation</a>
+<br>
+<a href="enigma_my_journey.html">Enigma simulation, my journey</a>
+<br>
+<a href="enigma_what_to_do_next.html">Enigma simulation, what to do next</a>
+</p>
+<p>
+<a href="20211226-enigma-machine.pdf">Every thing in a pdf file as of Dec 18, 2021</a>
+</p>
+<p>
+<a href="20211226-enigma-machine.zip">Every thing in a zip file as of Dec 18, 2021</a>
+</p>
+<p>
+<a href="http://www.tomshodgepodge.com/programming-projects/project_026.html">
+<i>Original Project Description - Simulate an Enigma Machine</i></a>
+<p>
+
+<h2>Links</h2>
+<p>
+<a href="https://www.youtube.com/watch?v=QwQVMqfoB2E">
+How the Enigma machine works | Animation</a>
+(YouTube)
+<br>
+<a href="https://www.youtube.com/watch?v=ncL2Fl6prH8&amp;t=2201s">
+The Enigma Code</a>
+(youTube)
+<br>
+<a href="https://www.youtube.com/watch?v=mcX7iO_XCFA">
+The Inner Workings of an Enigma Machine</a>
+(YouTube)
+<br>
+<a href="https://www.theguardian.com/technology/2014/nov/14/how-did-enigma-machine-work-imitation-game">
+How did the Enigma machine work?</a>
+<br>
+<a href="http://users.telenet.be/d.rijmenants/en/enigmasim.htm">
+Enigma Simulator v7.0</a>
+<br>
+<a href="https://en.wikipedia.org/wiki/Enigma_machine">
+Enigma machine</a>
+(Wikipedia)
+<br>
+<a href="https://en.wikipedia.org/wiki/Enigma_machine#Rotors">
+Enigma machine &amp; Rotors</a>
+(Wikipedia)
+<br>
+<a href="https://en.wikipedia.org/wiki/Enigma_rotor_details">
+Enigma rotor details</a>
+(Wikipedia)
+<br>
+<a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm">
+Technical Details of the Enigma Machine</a>
+<br>
+<a href="https://www.cryptomuseum.com/crypto/enigma/wiring.htm">
+Enigma wiring (Crypto Museum)</a>
+<br>
+<a href="https://web.stanford.edu/class/cs106j/handouts/36-TheEnigmaMachine.pdf">
+The Enigma Machine (stanford.edu)</a>
+<pdf>
+<br>
+<a href="https://www.codesandciphers.org.uk/enigma/enigma2.htm">
+The components of the Enigma machine</a>
+<br>
+<a href="https://hackaday.com/2017/08/22/the-enigma-enigma-how-the-enigma-machine-worked/">
+The Enigma Enigma: How The Enigma Machine Worked</a>
+</pdf></p>
+<p>
+<a href="https://www.101computing.net/enigma-machine-emulator/">
+Enigma Machine Emulator</a>
+<br>
+<a href="https://observablehq.com/@tmcw/enigma-machine">
+Enigma machine</a>
+</div>
+<footer>
+<modate>Last Modified: December 2021
+&nbsp;&nbsp;&nbsp;<a href="./copyright.html">Copyright</a>
+</modate>
+</footer>
+</body>
+</html>

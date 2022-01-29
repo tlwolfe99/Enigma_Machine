@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Lollipop</title><style>
+img.xx
+{
+  height: 600px;
+}
+img
+{
+  border: 2px solid #000000;
+}
+pre.xxx
+{
+  font-size: 1.2em;
+}
+code
+{
+  font-size:1.4em;
+}
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Simulation - Rotor List Index Advance Algorithm</center>
+</header>
+<div class="indent12">
+
+<h2>Introduction</h2>
+<p>
+Hardware rotors are represented in the simulation using python lists.
+When the physical rotor is advanced one position the python list
+must be modified (advanced one position).
+It requires two steps.
+<ol>
+<li>move the list entries up one
+<p></p>
+This rotates the rotor one position.
+This changes the "IN" points in the list.
+<p></p>
+For example:
+<div class="indent"><code><pre>(list indexes) 0 -> 26, 1 -> 0, 2 -> 1, 3 -> 2, ...</pre></code></div>
+<div class="indent"><code><pre>(characters)   A -> Z,  B -> A, C -> B, D -> C, ...</pre></code></div> 
+</li>
+<br>
+<li>reduce the list values by one
+<p></p>
+Because the rotor is made of physical wires they don't change lengths.
+The rotor list "IN and "OUT" points must remain a fixed
+distance apart. If you move the "IN" point, you must move the "OUT" point.
+<p></p>
+This changes the "OUT" points in the list.
+</li>
+</ol>
+
+<h2>Advance Rotor</h2>
+<p>
+<img src="enigma_rotor_list_index_advance.png" alt="image missing" />
+</p>
+
+
+
+</div>
+<footer>
+<modate>Last Modified: November 2021</modate>
+</footer>
+</body>
+</html>

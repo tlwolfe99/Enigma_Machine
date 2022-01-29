@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+p.xx { margin-top:30px; }
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Simulation - Randomize Rotor</center>
+</header>
+<div class="indent12">
+
+<h2>Introduction</h2>
+<p>
+To simulate a "hard wired" rotor substitution cipher, a
+Python list is used. A list-index is the input (character) and the list-value
+is the output substituted list-index (character).
+</p>
+<p>
+For a rotor to be a substitution cipher we create a
+randomized list from an ordered list.
+(Note: the lists contain list-indexes and no actual character.)
+</p>
+<p>
+In order to simulate an enigma machine correctly, a character can
+not be encoded to itself. In other words 'A' can not be substituted
+for 'A'. It must be a different character.
+</p>
+<p>
+I created this code to make sure 'A' is not be substituted for
+'A'. I searched the web for an hour looking for a existing
+solution but gave up. So here is my code (such as it is).
+</p>
+<p>
+I left my print statement in the code. I used them to see what
+was going on in the code. Comment them out or delete them
+or use them to see what is going on.
+</p>
+<p>
+This is not the best/cleanest code. someday I will fix it.
+For now it is good enough to continue with the enigma machine
+project.
+</p>
+
+<h2>Randomization Process</h2>
+<p>
+<img class="border" src="enigma_randomize_rotor.png" alt="image missing" />
+</p>
+
+<h2>The Algorithm</h2>
+<p>
+Each character at the top of the ordered list (abclst)
+is replaced in the randomized list (ranlst) from the remaining
+characters (in the ordered list abclst).
+</p>
+<p>
+After being added to the randomized list,
+the top character replaces the randomly selected character 
+in the ordered list. It can now be selected for inclusion
+in the random list.
+</p>
+<p>
+The process continues with the next top character in the ordered list.
+When there are only two characters left in the ordered list,
+they are handled differently. See the code.  
+</p>
+
+</div>
+<footer>
+<modate>Last modified: October 2021</modate>
+</footer>
+</body>
+</html>

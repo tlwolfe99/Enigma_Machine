@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+codex {font-size: 1.2em; }
+b {font-family: monospace; font-size: 1.4em; }
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Simulation - EnigmaMachine Documentation</center>
+</header>
+<div class="indent12">
+<h2>EnigmaMachine Class</h2>
+<p>
+The class EnigmaMachine implements an enigma machine. It requires several
+helper classes (EnigmaConfig and EnigmaRotor). It also uses the function
+in the file enigma_gui.py. 
+</p>
+<p>
+A configuration file is used to configure the enigma machine when it first starts up.
+It defines:
+<ul>
+<li>an alphabet</li>
+<li>the number of characters in the alphabet<br>
+<i>(used to verify other entries in the configuration file)</i></li>
+<li>rotors I through VIII containing randomized indexes (characters)</li>
+<li>reflector randomized list of indexes (characters)</li>
+<li>plugboard character pairs</li>
+</ul>
+</p>
+<p>
+Configuration files are created using the <b>create_enigma_config_file.py</b>
+program.
+</p>
+
+<h2>EnigmaMachine Methods</h2>
+<p>
+<b>__init__(configfile)</b><br>
+initialize and return an EnigmaMachine object.
+</p>
+<p>
+<b>display_internal_state()</b><br>
+displays current configuration/state of the rotor's, reflector, plugboard.
+</p>
+<p>
+<b>display_rotor_status()</b><br>
+display the current state of the rotor's. +Rotor name, start, and count.
+</p>
+<p>
+<b>char_to_idx(char)</b><br>
+returns a character's list index. If it does not exists
+in the alphabet, -1 is returned.
+</p>
+<p>
+<b>idx_to_char(idx)</b><br>
+return the alphabet character associated with the index.Limited to the
+enigma machine's alphabet. (Hardwired into the enigma machines
+configuration file.)
+</p>
+<p>
+<b>char_in_alphabet(char)</b><br>
+return True if the character is in the alphabet;
+Return False if the character it not in the alphabet.
+</p>
+<p>
+<b>advance_rotors()</b><br>
+advances the rotors one position. Every time the right rotor makes a complete revolution,
+the the middle rotor is advances one position. Every the the middle rotor makes a
+complete revolution, the left rotor is advanced one position. This cascade of rotor advancement
+continues until the rotors are reset.
+</p>
+<p>
+<b>advance rotor(rtr)</b><br>
+advances a specified rotor one position. True is returned of the rotor has made
+a complete revolution; False if it has not.
+</p>
+<p>
+<b>reset()</b><br>
+sets the simulation rotors to the builtin initial configuration.
+<ul>
+<li>Right rotor: rotor I, starting position 0</li>
+<li>Middle rotor: rotor II starting position 1</li>
+<li>Left rotor: rotor III starting position 2</li>
+</ul>
+</p>
+<p>
+<b>set(names,starts)</b><br>
+sets the simulation rotors to a new configuration.
+New rotors (I, II, III, VI, V, VI, VII, VIII) and new starting positions (indexes).
+The new configuration information is not saved.
+</p>
+<p>
+<i>Note: the reset command sets the rotors to a builtin configuration. The set command
+allows the user to set any (legal) configuration.</i>
+</p>
+<p>
+<b>names</b> is a list of three legal rotor names.
+Rotor names are limited to I, II, III, IV, V, VI,VII, VIII.
+Order is important (left,middle,right rotors).
+</p>
+<p>
+<b>starts</b> is a list of three legal rotor staring positions.
+Starting positions are list indexes.
+Starting positions (indexes) are limited to the size of the alphabet
+(0 to N-1).
+Order is important (left,middle,right rotors).
+</p>
+<p>
+<b>auto_advance_on()<br>
+auto_advance_off()<br>
+auto_advance_state()</b>
+returns the advancement (rotor rotation) flag.
+Used for debugging or experimenting.
+</p>
+<P>
+<b>sub_debug_on()<br>
+sub_debug_off()<br>
+sub_debug_state()</b>
+returns the display-character-substitution-detailed-information flag.
+(Substitution passes through the rotors, the reflector, and the plugboard.)
+Used for debugging or experimenting.
+</p>
+<p>
+<b>substitution(idx)</b>
+performs character substitutions using the rotors, reflector, and plugboard.
+(In other words, encrypting/decrypting the character using multiple substitution ciphers.)
+</p>
+
+</div>
+<footer>
+<modate>Last Modified: December 2021</modate>
+</footer>
+</body>
+</html>

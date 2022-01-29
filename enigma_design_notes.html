@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+img.xyz
+{
+  border: 2px solid #000000;
+  width: 400px;
+}
+a.cc0
+{
+font-size: 0.8em;
+}
+.s8
+{
+font-size: 0.8em;
+}
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Machine - Design Notes</center>
+</header>
+<div class="indent12">
+
+<h2>Introduction</h2>
+<p>
+This is an extraction of pertinent information from source material.
+I have distilled (simplified?) information down to what is needed
+to create a simulation of an Enigma Machine.
+There were many version of the Enigma machine. <b>I used this
+material for my simulation.</b>
+</p>
+<p>
+The Enigma machine only encoded capitol letters (A - Z)<br>
+&nbsp;&nbsp;&nbsp;- lowercase letters were not allowed<br>
+&nbsp;&nbsp;&nbsp;- numbers were spelled out (one, two, ...)<br>
+&nbsp;&nbsp;&nbsp;- unprintable characters were never transmitted<br> 
+&nbsp;&nbsp;&nbsp;- punctuation, spaces, etc. where replaces by an 'X'
+</p>
+
+<h2>Substitution Cipher</h2>
+<p>
+A substitution cipher substitutes one letter for another.
+Plaintext is thus converted to ciphertext. Knowing the
+substitution algorithm (process steps),
+ciphertext can be converted back to plaintext.
+</p>
+<p>
+The Enigma Machine used a complicated set of mechanical substitution ciphers.
+</p>
+
+<h2>Rotor</h2>
+<p>
+Each rotors is wired differently and contains a different fixed
+substitution cipher. In some Enigma machines three rotors were used, but
+some used as many as eight. The simulation will use three rotors.
+</p>
+<p>
+Each rotor was given a name using Roman numerals:
+I, II, III, IV, V, VI, VII and VIII. To further complicate things
+the rotors were allowed to be moved around before use. Rotor II might be
+the left one, with rotor III in the middle and rotor I on the right.
+</p>
+<p>
+Each rotor also has an attached an alphabet ring that turns with the rotor
+and was used to set the initial (starting) position of the rotors.
+The positions were numbered A-Z.
+</p>
+<p>
+The person doing the encrypting would choose random rotor starting positions and include them
+at the start of the messages. They sent the rotor positions in the clear
+followed by the ciphertext.
+</p>
+<p>
+Which rotors used by the sender and receiver was published
+in a document. Sometimes it was changed daily.
+For the simulation the sender and receiver will agree on the order.
+(Although, if they want to publish a document ...)
+</p>
+<p>
+Remember, each rotor is named using a Roman numeral. 
+</p>
+<p>
+<img class="xyz" src="enigma_rotor.png" alt="image missing" />
+<br><i class="s8">commons.wikimedia.org/wiki/File:Enigma_rotor_set.png</i>
+</p>
+
+<h2>Reflector</h2>
+<p>
+The reflector appears to be nothing but a fixed rotor reflecting each character
+back thru a different position. A selected character is passed thru each rotor
+twice. Once in each direction before the results is lit up on the lampboard.
+Thus passing the character thru the equivalent of six rotors.
+</p>
+
+<h2>Rotation</h2>
+<p>
+A keypress caused one or more of the rotors to turn. The first rotor would
+turn one letter position for each keypress.
+The second rotor turns one letter after the first rotor made a
+complete rotation. The third rotor then turned one letter for every
+complete rotation of the second rotor.
+</p>
+
+<h2>Plug Board</h2>
+<p>
+In 1930 the German army versions added a plugboard. This allows letters to be swapped
+before going to the rotors.
+</p>
+<p>
+Since there are 26 letters, up to 13 swaps could be done but typically only up to 10 were used.
+</p>
+<p>
+For example if the plugboard was wired to swapped two letters (A and D)
+<ul>
+<li>If the A key was pressed, D was sent to the rotors.</li>
+<li>If the D key was pressed, A was send to the rotors.</li>
+</ul>
+This added another layer of complexity to the encryption.
+</p>
+<p>
+<img class="border" src="enigma_plugboard.png" alt="image missing" />
+<br><i class="s8">commons.wikimedia.org/wiki/File:Enigma_Verkehrshaus_Luzern.jpg</i>
+</p>
+<p>
+The plugboard swaps characters before and after they are sent to the rotors.
+</p>
+
+
+<h2>Links</h2>
+<p>
+<a href="https://www.youtube.com/watch?v=QwQVMqfoB2E">
+How the Enigma machine works | Animation</a>
+(YouTube)
+<br>
+<a href="https://www.youtube.com/watch?v=ncL2Fl6prH8&amp;t=2201s">
+The Enigma Code</a>
+(youTube)
+<br>
+<a href="https://www.youtube.com/watch?v=mcX7iO_XCFA">
+The Inner Workings of an Enigma Machine</a>
+(YouTube)
+<br>
+<a href="https://www.theguardian.com/technology/2014/nov/14/how-did-enigma-machine-work-imitation-game">
+How did the Enigma machine work?</a>
+<br>
+<a href="http://users.telenet.be/d.rijmenants/en/enigmasim.htm">
+Enigma Simulator v7.0</a>
+<br>
+<a href="https://en.wikipedia.org/wiki/Enigma_machine">
+Enigma machine</a>
+(Wikipedia)
+<br>
+<a href="https://en.wikipedia.org/wiki/Enigma_machine#Rotors">
+Enigma machine &amp; Rotors</a>
+(Wikipedia)
+<br>
+<a href="https://en.wikipedia.org/wiki/Enigma_rotor_details">
+Enigma rotor details</a>
+(Wikipedia)
+<br>
+<a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm">
+Technical Details of the Enigma Machine</a>
+<br>
+<a href="https://www.cryptomuseum.com/crypto/enigma/wiring.htm">
+Enigma wiring (Crypto Museum)</a>
+<br>
+<a href="https://web.stanford.edu/class/cs106j/handouts/36-TheEnigmaMachine.pdf">
+The Enigma Machine (stanford.edu)</a>
+<pdf>
+<br>
+<a href="https://www.codesandciphers.org.uk/enigma/enigma2.htm">
+The components of the Enigma machine</a>
+<br>
+<a href="https://hackaday.com/2017/08/22/the-enigma-enigma-how-the-enigma-machine-worked/">
+The Enigma Enigma: How The Enigma Machine Worked<a>
+
+</div>
+<footer>
+<modate>Last modified: August 2021
+&nbsp;&nbsp;&nbsp;
+<a class="cc0" href="https://creativecommons.org/publicdomain/zero/1.0/"
+title="Definition of the Creative Commons CC0 License">Creative Commons CC0 License</a></modate>
+</footer>
+</body>
+</html>

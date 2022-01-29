@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+img.xyz
+{
+  border: 2px solid #000000;
+  width: 200px;
+}
+code
+{
+   font-size: 1.4em;
+   font-weight: bold;
+}
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Simulation - Operation Notes</center>
+</header>
+<div class="indent12">
+
+<h2>Introduction</h2>
+<p>
+This document is sort-of an operation manual for the Enigma simulation.
+It is not much, but here it is.
+</p>
+<p>
+To use the Enigma machine simulation to communicate
+requires a shared rotor, reflector, plugboard configuration.
+<ul>
+<li>The reflector is fixed and never changes.</li>
+<li>The plugboard is changed periodically on an agreed upon schedule. weekly? daily? hourly?</li>
+<li>Which rotors ("I",...,"VII") to use is also part of the published schedule.</li>
+<li>The rotors have initial settings and rotate with each character of a message.
+(They rotate in a fixed pattern so the sender and receiver can repeat it.)
+</li>
+<li>The rotor's initial position are part of each message.</li>
+</ul>
+</p>
+<p>
+It is always a good idea to read the code
+files for more information. The structure of the code and the comments in the
+code are another form of documentation.
+</p>
+
+<h2>Enigma Machine Simulation Configuration</h2>
+<p>
+The Enigma machine simulation configuration is in a file.
+It contains rotor, reflector, and plugboard "wiring" and
+is created by a user. To communicate, the configuration (file) must be shared
+and used by others.
+</p>
+<p>
+Which rotors to use and their order (left,middle,right),
+and the rotor's initial (starting) position must be communicates
+another way. It could be communicated verbally or written down.
+</p>
+
+<h2>Creating Configuration Files</h2>
+<p>
+The program <code>create_emigma_config_file.py</code> is available and
+is used to create configuration files. The file is a simple
+comma separated value (csv) file. The file format can be understood by
+reading the file.
+</p>
+<p>
+The program allows the user to select one of several alphabets and also set plugboard
+pairs as part of the enigma simulation configuration. It creates the file
+<code>enigma_config.csv</code>.
+</p>
+
+<h2>Multiple Configuration Files</h2>
+<p>
+When communicating with a large number of people you may need separate
+configuration files for different groups. The enigma machine simulation programs
+has a build in default configuration file name (<code>enigma_config.csv</code>).
+If you do not want to use the default, you may include a different configuration
+file as the first parameter on the command line.
+<p></p>
+To create separate configuration files:
+<ol>
+<li>Create a config file using <code>create_enigma_config_file.py</code>.
+This will create a config file having new "wiring" for rotors, and reflector.
+(Perhaps a new plugboard setup if you enter different character pairs.)</li>
+<li>Rename the new config file (<code>enigma_config.py</code>).</li>
+<li>Include the renamed config file on the command line.</li>
+</ol>
+</p>
+ 
+<h2>Send and Receiving Messages</h2>
+<p>
+<i>These steps are from:
+<a href="https://hackaday.com/2017/08/22/the-enigma-enigma-how-the-enigma-machine-worked/">
+The Enigma Enigma: How The Enigma Machine Worked</a></i>
+</p>
+<p>
+The sender and receiver must use the same configuration of the enigma machine in
+order to communicate. They must know
+<ul>
+<li>the rotors to be used (I, ... ,VIII)</li>
+<li>the order of the rotors (left,middle,right)</li>
+<li>the plugboard configuration</li>
+</ul>
+These were published and changed regularly (hourly? daily?). The sender and receiver
+looked up this information and configure their enigma machines accordingly.
+</p>
+<p>
+To set the rotor starting positions, the person doing the encrypting
+selects random rotor positions and includes them at the start of a message.
+<ol>
+<li>Make up an initial start position. For example
+ABC, and a message key, DEF.</li>
+<li>Set the rotors to ABC and type in DEF. Let’s say that
+encrypts to GHI.</li>
+<li>Next set the rotors to the message key, DEF, and start typing the
+plaintext message.</li>
+<li>Record the output, which is the ciphertext.</li>
+<li>Transmit the initial start position ABC, the encrypted message key GHI,
+and then the ciphertext.</li>
+</ol>
+</p>
+<p>
+The person decrypting the message would
+<ol>
+<li>Set the rotors to the first three letters received, ABC.</li>
+<li>type in the next three letters, GHI. DEF is output.</li>
+<li>sets the rotors to DEF.</li>
+<li>Start typing the ciphertext message. The output is
+the plaintext message.</li>
+</ol>
+</p>
+
+</div>
+<footer>
+<modate>Last modified: October 2021</modate>
+</footer>
+</body>
+</html>

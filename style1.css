@@ -1,0 +1,313 @@
+@font-face
+{
+  font-family: ArchitectsDaughter;
+  src: url('ArchitectsDaughter.ttf');
+}
+body
+{
+  font-size: 1.0em;
+  font-family: Verdana,Helvetica,Arial,sans-serif;
+  /* font-family: Cantarell,Arial,sans-serif; */
+  background-color: #f0f0f0;
+}
+header
+{
+  font-family: ArchitectsDaughter;
+  background-color: #22BB32; 
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-top: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.6em;
+  font-weight: bold;
+  display: block;       /* for IE8 or less */
+}
+nav
+{
+  display: block;       /* for IE8 or less */
+}
+footer
+{
+  margin-top: 10px;
+  font-size: 1.0em;
+  font-style: italic;
+  border-top: 2px solid #000;
+  display: block;       /* for IE8 or less */
+  /* margin: 0 0 0 40px; */
+}
+div.help
+{
+  float: right;
+}
+div.indent
+{
+  margin-left:  22px;
+  margin-right: 22px;
+}
+div.indentleft
+{
+  margin-left:  22px;
+}
+div.indent12
+{
+  margin-left: 12px;
+}
+fieldset
+{
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+fieldset.login
+{
+  display: inline-block;
+  border-radius: 5px;
+}
+fieldset.testtest
+{
+  display: inline-block;
+  border-radius: 5px;
+  background: yellow;
+}
+
+fieldset legend
+{
+  font-weight: bold;
+}
+form.inlinebutton
+{
+  display: inline-block;
+}
+p.indent
+{
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+h1
+{
+  font-size: 1.3em;
+  font-family: arial,sans-serif;
+}
+h2
+{
+  font-size: 1.2em;
+  font-family: arial,sans-serif;
+}
+h3
+{
+  font-size: 1.1em;
+  font-family: arial,sans-serif;
+}
+a.goto, a:hover.goto, a:focus.goto, a:active.goto, input.goto
+{
+  text-decoration: none;
+}
+.goto
+{
+  text-decoration: none;
+}
+a.copyright
+{
+  font-size: 0.8em;
+}
+a goto
+{
+  text-decoration: none;
+}
+a.longindent
+{
+   display: block;
+   margin-left: 2em;
+   text-indent: -2em;"
+}
+textarea
+{
+  border: 1px solid #000;
+  font-size: 1.1em;
+  font-family: arial,sans-serif;
+  overflow-y: scroll;
+  background: white;
+  padding-left: 12px;
+  padding-right: 12px;
+  resize: none;
+  white-space: nowrap;
+  overflow: auto;
+}
+table.fancy   th                   { background-color: #ddd;     }
+table.fancy   td                   { background-color: white;    }
+table.fancier th                   { background-color: #ddd;     }
+table.fancier tr:nth-child(even)   { background-color: #eee;     }
+table.fancier tr:nth-child(odd)    { background-color: #fff;     }
+
+table.fancyall                      { border: 2px solid #000;
+                                      border-collapse: collapse; }
+table.fancyall td                   { padding: 10px;
+                                      border: 2px solid #000;
+                                      background-color: white;   }
+table.fancyall th                   { padding: 10px;
+                                      border: 2px solid #000;
+                                      background-color; #ddd     }
+table.fancierall tr:nth-child(even) { background-color: #eee;    }
+table.fancierall tr:nth-child(odd)  { background-color: #fff;    }
+td
+{
+  vertical-align: top;
+}
+td.topcenter
+{
+  vertical-align: text-top;
+  text-align: center;
+}
+td.center
+{
+  text-align: center;
+}
+td.right
+{
+  text-align: right;
+}
+input.select
+{
+  /* font-size: 1.2em; */
+}
+input.field
+{
+  border:1px solid #000;
+  font-size: 1.1em;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+select.pulldown
+{
+  border:1px solid #000;
+  font-size: 1.1em;
+}
+ol.loweralpha
+{
+  list-style-type:lower-alpha;
+}
+ul.none
+{
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+img.border
+{
+  border:2px solid #000;
+}
+
+field
+{
+  border:1px solid #000;
+  font-size: 1.1em;
+  font-family: arial,sans-serif;
+  background:white;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+code
+{
+  font-family: monospace;
+  font-size: 1.0em;
+}
+codeb
+{
+  border: 1px solid #000;
+  margin-bottom: 1.0em;
+  padding: .667em .917em;
+  display: inline-block;
+  /* width: 90%; */ 
+  font-family: monospace;
+  font-size: 1.0em;
+  background-color: white;
+  white-space: pre-wrap;
+}
+codex
+{
+  border: 1px solid #000;
+  margin-bottom: 1.0em;
+  padding: .667em .917em;
+  display: block;
+  /* width: 90%; */ 
+  font-family: monospace;
+  font-size: 1.0em;
+  background-color: white;
+  white-space: pre-wrap;
+}
+codeblock
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+  font-family: monospace;
+  background-color: white;
+  white-space: pre;
+}
+.box
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+}
+.rbox
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+.r10box
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 10px;
+}
+.r25box
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 25px;
+}
+.box
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+}
+.rbox
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+.r10box
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 10px;
+}
+.r25box
+{
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 25px;
+}
+.centerbox
+{
+  display: table-cell;
+  border: 2px solid #000;
+  padding: 10px;
+}
+modate
+{
+  font-size: 0.8em;
+  margin-left: 12px;
+}

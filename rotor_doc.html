@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+codex {font-size: 1.2em; }
+b {font-family: monospace; font-size: 1.4em; }
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Simulation - EnigmaRotor Documentation</center>
+</header>
+<div class="indent12">
+<h2>EnigmaRotor Class</h2>
+<p>
+The class EnigmaRotor implements an enigma machine rotor.
+It requires the helper classes EnigmaConfig.
+</p>
+
+<h2>EnigmaRotor Methods</h2>
+<p>
+<b>__init__(config,rotor_name,rotor_start)</b><br>
+initialize and return an EnigmaRotor object.
+</p>
+<p>
+<b>config</b> EnigmaConfig object.
+</p>
+<p>
+<b>rotor_name</b> name of rotor (list) to use. (From EnigmaConfig object.)
+</p>
+<p>
+<b>rotor_start</b> rotor starting index.
+</p>
+
+<p>
+<b>rtol_substitution(idx)</b><br>
+Used for character substitution when passing through the rotor right-to-left.
+Input is a list index; Output is a different list index.
+</p>
+<p>
+<b>ltor_substitution(idx)</b><br>
+Used for character substitution when passing through the rotor left-to-right.
+Input is a list index; Output is a different list index.
+</p>
+<p>
+<b>reset(rotor_name,rotor_start)</b><br>
+</p>
+<p>
+<b>rotor_name</b> name of rotor (list) to use. (From EnigmaConfig object.)
+</p>
+<p>
+<b>rotor_start</b> rotor starting index.
+</p>
+<p>
+<b>display(title,all)</b><br>
+Display rotor's internal data.
+</p>
+<p>
+<b>title</b> (optional) String or None. Title to display.
+</p>
+<p>
+<b>all</b> (optional) True or False. Display complete internal data.
+</p>
+
+</div>
+<footer>
+<modate>Last Modified: December 2021</modate>
+</footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+a.cc0
+{
+font-size: 0.9em;
+}
+</style>
+</head>
+<body>
+<header>
+<center>Enigma Machine Simulation Project Design</center>
+</header>
+<div class="indent12">
+
+<h2>Introduction</h2>
+<p>
+This project is to create an Enigma Machine simulation.
+</p>
+<p>
+The document is my first pass through a design.
+The as-build (code) is somewhat different.
+(See the other documents.)
+</p>
+
+<h2>Program #1</h2>
+<p>
+Create rotor configurations and write them to a file.
+In order to share them, the configuration file format is standardized and will
+<ol type="a">
+<li>contain eight rotors (I, II, III, IV, V, VI, VII, VIII)</li>
+<li>each rotor with have 26 letters</li>
+<li>the internally wiring will be randomly generated</li>
+<li>The configuration file will contain csv data</li>
+<li>each line will have the following format:
+<i>Rotor</i>,<i>input letter</i>,<i>output letter</i>
+<br>
+for example<br>
+<pre><codex>I,A,X
+I,B,D
+...
+...
+II,A,Q
+II,B,U
+...
+...</codex></pre>
+</li>
+</ol>
+<p>
+<i>Note:
+<ol>
+<li>If this is a class project common reflector and rotor
+configurations should be used. This will allow students to send and
+receive encrypted messages from other students.</li>
+<li>You can use this program to create a
+reflectors configuration. (format: R,input letter,output letter)</li>
+<li>The rotor and reflector configurations can be in a single file</li>
+<li>Hint: look up random.shuffle()</li>
+</ol></i>
+</p>
+
+<h2>Program #2</h2>
+<p>
+Simulate an enigma machine, and only use rotors.
+<ol type="a">
+<li>read a rotor configuration file</li>
+<li>allow the user to select which rotors to use</li>
+<li>allow the user to select which position to place each rotor
+(left, middle, right)</li>
+<li>allow the user to select the starting position for each rotor</li>
+<li>allow the user to entering text to be encrypted</li>
+<li>allow the user to enter text to be decrypted</li>
+<li>limit the amount of text to be entered at one time to (60 characters?)</li>
+<li>on request, display the internal state of the simulation</li>
+</ol>
+</p>
+
+
+<h2>Programs #3 and #4</h2>
+<p>
+This will be the same as program #1 and #2, with the plugboard added.
+</p>
+<p>
+Allow the user to configure the plugboard. (interactive?)
+(add to rotor configuration file?) (separate configuration file?)
+</p>
+
+<h2>Program #5</h2>
+<p>
+Create a GUI for the simulation.
+</p>
+
+<h2>Enigma Machine Simulation Design</h2>
+
+<h2>Rotor</h2>
+<p>
+<ol>
+<li>there will be 8 rotors available</li>
+<li>each rotor has a different wiring</li>
+<li>each rotor will have 26 letters (all caps)</li>
+<li>the rotors will be numbered (named) I, II, III, IV, V, VI, VII, VIII</li>
+<li>the rotor wiring will be in a data file and read by the simulation</li> 
+<li>Each rotor supports starting on any letter</li>
+<li>The simulation will use 3 rotors</li>
+<li>every time there is a keypress, the right rotor
+is advanced one position. After a complete rotation,
+the middle rotor will be advanced one position.
+it is the same for the left rotor.
+when the middle rotor makes a complete rotation,
+the left rotor is advanced one position.</li>
+<li>the data input flow is to the
+ <ol type="a">
+ <li>right rotor, then to the</li>
+ <li>middle rotor, then to the</li>
+ <li>left rotor, then to the</li>
+ <li>reflector, and back to the</li>
+ <li>left rotor, then to the</li>
+ <li>middle rotor, then to the</li>
+ <li>right rotor, then to the</li>
+ <li>data display</li>
+ </ol>
+</ol>
+</p>
+<p>
+<img class="border" src="enigma_rotor_example.png" alt="image missing" />
+</p>
+
+<h2>Plug Board</h2>
+</p>
+The plug board will allow the user to select any two letters to be swapped.
+This means up to 13 swaps are possible.
+</p>
+
+</div>
+<footer>
+<modate>Last Modified: August 2021
+&nbsp;&nbsp;&nbsp;<a href="./copyright.html">Copyright</a>
+</modate>
+</footer>
+</body>
+</html>

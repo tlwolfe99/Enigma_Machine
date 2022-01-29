@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Thomas Wolfe" />
+<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="lollipop.css" />
+<link rel="icon"          href="favicon.png" type="image/png" />
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<title>Hodgepodge</title>
+<style>
+img.xyz
+{
+  border: 2px solid #000000;
+  width: 200px;
+}
+code
+{
+   font-size: 1.4em;
+   font-weight: bold;
+}
+</style>
+</head>
+<body>
+<header>
+<center>Enigmas Simulation - What to do Next</center>
+</header>
+<div class="indent12">
+
+<h2>What to do Next</h2>
+<p>
+After the code is working, what to do next.
+<ul>
+<li>Remove redundant code. There is a lot of redundant/useless code
+in the python files (*.py). It is there because I did a lot of
+tinkering with code while figuring out what I wanted to do.
+As an example, with a little re-structuring multiple global
+variables could be eliminated.</li>
+<li>Cleanup/re-structure the code. For example,
+  <ul>
+  <li>Eliminate the EnigmaRotor class?</li>
+  <li>Move more functionality into the EnigmaRotor class?</li>
+  <li>Add help information to the GUI?</li>
+  <li>Make a better GUI</li>
+  <li>Create documentation. (Use Pydoc for the Python class interface?)</li>
+  <li>Currently rotor lists contain absolute index values. Change them to
+      relative index values. (Relative to the current index +N or – N?)
+      Also use pop/append to rotate a rotor (list)?
+      <br><i>For example: next_rotor_idx = (current_rotor_idx + list[current_rotor_idx]) % list_length</i></li>
+  </ul>
+<li>Create a program to encrypt/decrypt a file.
+What do you do with characters not in the alphabet? New-line? Carriage-return?</li>
+<li>Create an expanded alphabet. For example, add the characters
+'&nbsp;', '&bsol;n', '&bsol;r', and others. (perhaps lowercase?)<br>
+<i>(remember there must be a even number of characters in the alphabet.)</i></li>
+<li>Create a software enigma machine that allow a character to substitute itself.
+(Bypass the hardware limitation.)</li>
+<li>Output Morse code? Input Morse code? <i>(What is a Numbers Station?)</i></li>
+<li>Create a GUI that somehow simulates "lighting a lamps".
+(Actual hardware light bulbs? Seven segment display?)</li>
+<li>Create an Enigma Machine that can encrypt/decrypt binary files/data.
+(split bytes into nibbles? base64 binary-to-text encoding?)</li>
+</ul>
+</p>
+
+</div>
+<footer>
+<modate>Last modified: November 2021</modate>
+</footer>
+</body>
+</html>
